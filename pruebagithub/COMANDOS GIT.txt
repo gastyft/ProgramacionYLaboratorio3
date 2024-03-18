@@ -1,0 +1,82 @@
+COMANDOS GIT PARA DESCARGAR O CARGAR DESDE EL REPOSITORIO DE GITHUB
+
+PRIMERO HAY QUE CREAR UNA CARPETA EN LA CUAL VAN A TENER TODOS LOS REPOSITORIOS.
+
+
+En esa carpeta se hace click derecho, click en "Git Bash" y se abre consola de GIT.
+
+Se copia el link del repositorio a clonar o descargar.
+
+y en consola se pone:
+
+ejemplo:
+
+git clone https://github.com/gastyft/TP-Final-Progra2 
+
+
+
+ PARA CARGAR:
+
+Ingresar a la carpeta de repositorios e ingresar a la carpeta del proyecto con los archivos.
+Esto se hace para que quede algo asi C:/usuario/Repositorios//TP-Final-Progra2 
+entonces asi ya GIT sabe en que repositorio queres subir o bajar archivos.
+
+Click derecho, click en "Git Bash" y luego estos pasos.
+
+1- INDICAR QUE DATOS SUBIR(el git add . agrega todo)
+
+git add . 
+
+2- Hacer un mensaje de subida
+
+git commit -m "Mensaje de subida que quieran"
+
+3- Subir esos archivos a GitHub
+
+git push
+
+
+PARA DESCARGAR
+Ingresar a la carpeta de repositorios e ingresar a la carpeta del proyecto con los archivos.
+Abrir el git bash 
+
+y utilizar el comando
+
+git pull
+
+
+
+
+ALGUNAS COMPLICACIONES:
+
+En caso de que salga warning ignorenlo.
+
+Si dice en ingles primero hacer un pull, hacen el pull y luego hacen el push para subir los archivos
+
+
+
+
+git pull origin nombre-de-tu-rama-remota
+
+
+
+DESCARGAR RAMA inOrder
+
+git branch -r
+
+git checkout -b nombre_rama origin/nombre_rama
+
+git push origin nombre_rama
+
+git fetch
+
+git merge origin/nombre_rama
+
+
+git checkout -b nombre_rama origin/nombre_rama
+Este comando crea una nueva rama llamada nombre_rama en
+ tu repositorio local y la sincroniza con la rama nombre_rama del repositorio remoto.
+
+El comando git fetch descarga los cambios del repositorio remoto a tu repositorio local, 
+pero no fusiona esos cambios con tu rama actual. 
+En su lugar, actualiza las referencias remotas en tu repositorio local para que reflejen el estado actual del repositorio remoto.
