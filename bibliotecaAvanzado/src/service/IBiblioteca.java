@@ -1,13 +1,10 @@
 package service;
 
-import model.Prestamo;
-import model.Reservado;
-
 public interface IBiblioteca {
 
-public  void reservarItem(Reservado reservado);
+    public void reservarItem(String titulo);
 
-public  void prestarItem(Prestamo prestamo);
+  //  public  void prestarItem(Prestamo prestamo);
 
 
 

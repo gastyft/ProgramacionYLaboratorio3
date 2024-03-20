@@ -1,4 +1,5 @@
 import model.Biblioteca;
+import model.Item;
 import model.Libro;
 import model.Usuario;
 import service.LibroService;
@@ -6,6 +7,8 @@ import service.PeriodicosService;
 import service.RevistasService;
 import service.UsuarioService;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +21,9 @@ public class Main {
    private  RevistasService revistasService = new RevistasService();
    private  PeriodicosService periodicosService = new PeriodicosService();
 
-    public static   void main(String[] args) {
+
+   //MAIN EJECUCION DE CODIGO
+    public static void main(String[] args) {
 
 
         Main main = new Main();  // PREGUNTAR PORQUE NO ME TOMA FUNCIONALIDAD SIN INSTANCIAR UN MAIN
@@ -26,7 +31,7 @@ public class Main {
 
     }
 
-    // PREGUNTAR SOBRE LAS CONTENEDORAS
+    // PREGUNTAR SOBRE LAS CONTENEDORAS en que package hacerlas y como llamar ese package.
     public  void agregarUsuarios() {
 
         String o = "ESC";
@@ -122,17 +127,20 @@ public class Main {
             System.out.println("Nombre de usuario: "+usuario.getNombre()+ " ID: "+usuario.getId());
         }
     }
-    public   void mostrarLibros(){
+    public void mostrarLibros(){
         for(Libro libros : libroService.obtenerLibros())
         {
             System.out.println("Titulo del libro: "+libros.getTitulo()+ "Autor: "+libros.getAutor()+" Con ID: "+ libros.getId());
         }
     }
 
-public   void funcionalidad(){
+public void funcionalidad(){  //FALTA SERVICE ITEMS Y FUNCIONES DE RESERVAS Y FUNCIONES CONTENEDORAS DE TODAS LAS CLASES
         agregarUsuarios();
-        agregarLibros();
-        mostrarUsuarios();
+    agregarLibros();
+    List<Item> listaItems = new ArrayList<>(libroService.obtenerLibros()); // Obtener la lista de libros del servicio
+    biblio.setItemList(listaItems); // Pasar la lista de libros al método setItemList
+biblio.setUsuarioList(usuarioService.obtenerUsuarios());
+    mostrarUsuarios();
         System.out.println("----------------------------------------------------------------------------------------");
         mostrarLibros();
 }
