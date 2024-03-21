@@ -31,7 +31,7 @@ public class Main {
 
     }
 
-    // PREGUNTAR SOBRE LAS CONTENEDORAS en que package hacerlas y como llamar ese package.
+    // PREGUNTAR SOBRE LAS CONTENEDORAS en que package hacerlas y como llamar(nombre) ese package.
     public  void agregarUsuarios() {
 
         String o = "ESC";

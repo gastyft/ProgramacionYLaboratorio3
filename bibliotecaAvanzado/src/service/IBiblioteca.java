@@ -1,10 +1,12 @@
 package service;
 
+import model.Usuario;
+
 public interface IBiblioteca {
 
-    public void reservarItem(String titulo);
+    public void reservarItem(String titulo, Usuario usuario);
 
-  //  public  void prestarItem(Prestamo prestamo);
+    public  void prestarItem(String titulo, Usuario usuario);
 
 
 
