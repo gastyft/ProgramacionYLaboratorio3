@@ -122,7 +122,7 @@ public class Main {
     }
 
     public   void mostrarUsuarios(){
-        for(Usuario usuario : usuarioService.obtenerUsuarios())
+        for(Usuario usuario : biblio.getUsuarioList())
         {
             System.out.println("Nombre de usuario: "+usuario.getNombre()+ " ID: "+usuario.getId());
         }
@@ -130,21 +130,57 @@ public class Main {
     public void mostrarLibros(){
         for(Libro libros : libroService.obtenerLibros())
         {
-            System.out.println("Titulo del libro: "+libros.getTitulo()+ "Autor: "+libros.getAutor()+" Con ID: "+ libros.getId());
+            System.out.println("Titulo del libro: "+libros.getTitulo()+ " Autor: "+libros.getAutor()+" Con ID: "+ libros.getId());
         }
     }
 
-public void funcionalidad(){  //FALTA SERVICE ITEMS Y FUNCIONES DE RESERVAS Y FUNCIONES CONTENEDORAS DE TODAS LAS CLASES
+public void funcionalidad(){  //FALTA SERVICE ITEMS,  FUNCIONES DE RESERVAS Y FUNCIONES CONTENEDORAS DE TODAS LAS CLASES y MENUS POR CLASES
         agregarUsuarios();
     agregarLibros();
     List<Item> listaItems = new ArrayList<>(libroService.obtenerLibros()); // Obtener la lista de libros del servicio
     biblio.setItemList(listaItems); // Pasar la lista de libros al método setItemList
-biblio.setUsuarioList(usuarioService.obtenerUsuarios());
+biblio.setUsuarioList(usuarioService.obtenerUsuarios()); // instancio la lista cargada a la clase padre Biblioteca.
     mostrarUsuarios();
         System.out.println("----------------------------------------------------------------------------------------");
         mostrarLibros();
-}
 
+        // Dar opciones al bibliotecario para querer seleccionar alguna funcion del CRUD de usuarios, libros,etc y demas clases
+}
+public void menu() {
+    Scanner scanner = new Scanner(System.in);
+    String o="ESC";
+    System.out.println("Menu: \n1) Menu Usuarios \n2) Menu Libros \n3) Menu Revistas \n4) Menu Periodicos \n5) Menu prestamos \n6) Menu reservas ");
+
+    o=scanner.nextLine();
+    do {
+        System.out.println("Menu: \n1) Menu Usuarios \n2) Menu Libros \n3) Menu Revistas \n4) Menu Periodicos \n5) Menu prestamos \n6) Menu reservas ");
+        o=scanner.nextLine();
+        switch (o) {
+          //SUB MENUS
+            case "1":
+                // SUB MENU USUARIOS.
+                break;
+            case "2":
+                //SUB MENU LIBROS
+                break;
+            case "3":
+                //SUB MENU REVISTAS
+                break;
+            case "4":
+                //SUB MENU PERIODICOS
+                break;
+            case "5":
+                //SUB MENU PRESTAMOS
+                break;
+            case "6":
+                //SUB MENU RESERVAS
+                break;
+            default:
+                System.out.println("Opcion incorrecta");
+                break;
+        }
+    }while (!o.equalsIgnoreCase("ESC"));
+}
 
 
 
